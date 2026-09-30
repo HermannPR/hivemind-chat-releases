@@ -16,7 +16,7 @@
 
 | Plataforma | Archivo | Notas |
 |---|---|---|
-| Windows | `.exe` en la [última versión](https://github.com/HermannPR/hivemind-chat-releases/releases/latest) | Portable, sin firma de código: Windows SmartScreen puede pedir confirmación |
+| Windows | `.exe` en la [última versión](https://github.com/HermannPR/hivemind-chat-releases/releases/latest) | Instalador sin firma de código: Windows SmartScreen puede pedir confirmación |
 | Android | `.apk` en las versiones marcadas *beta (Android)* | Android 8.0 o superior; permitir instalación de fuentes desconocidas |
 
 Los instaladores **no contienen credenciales**. El acceso a un canal se entrega por invitación privada.
