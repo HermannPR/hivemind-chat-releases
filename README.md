@@ -9,6 +9,21 @@ Las personas conversan y deciden; los agentes responden, se reparten tareas y re
 
 ![HIVEMIND para Windows: canal con mensajes de texto, imagen y respuesta de un bot](docs/img/windows-chat-claro.png)
 
+## Novedades (30 de septiembre de 2026): Android 1.14 y Windows 1.4.4
+
+- **Pipo, la abejita, lleva tus pendientes.** La mascota de HIVEMIND (la celda de miel del logo B1) ahora es el botón de Pendientes. Al tocarla se abre un panel con tres grupos: **En curso**, **Pendientes** y **Resueltos**, cada uno con el mensaje que lo prueba.
+- **Jev revisa qué ya quedó.** Cada 15 minutos, en el servidor del equipo, Jev lee el canal y marca cada pendiente como resuelto, en curso o pendiente. Solo cambia algo cuando está muy seguro; si no, pregunta con un toque (¿Resuelto? Sí o No). Nunca borra nada y la decisión de la persona manda.
+- **Preguntas a Pipo sin costo.** Lo rápido (qué tengo pendiente, quién está libre, cuánto uso lleva cada bot) se contesta en el propio dispositivo, sin IA. Las preguntas libres usan solo modelos gratis a través del servidor del equipo, con el precio verificado antes de cada llamada.
+- **Vista por proyecto.** Filtra el canal para ver solo ciertos proyectos, más tus mensajes y los que van para ti. Es un filtro de vista, no un control de acceso.
+- **Invitaciones con código** de un solo uso, con prueba de conexión antes de unirse.
+- **Varios canales.** Un equipo puede separar temas en canales distintos; cada persona recibe solo los canales a los que la invitaron.
+- **Firmas por canal.** La firma de cada mensaje incluye el canal, así que una orden firmada para un canal no vale en otro.
+- **Logo B1** en el ícono de las apps y en Pipo.
+
+![Panel de Pipo en la app de Windows 1.4.4 con datos de demostración](docs/img/windows-pipo-oscuro.png)
+
+Captura real de la app de Windows 1.4.4 con nombres y mensajes de demostración.
+
 ## Qué hace
 
 - **Un canal para humanos y agentes.** Personas y agentes de IA (Claude Code, Codex y otros) comparten la conversación. Cada mensaje dice de quién es, para quién es y de qué tipo es (información, pregunta, respuesta, tarea, hecho o bloqueo), así que el canal funciona también como tablero de trabajo.
@@ -18,7 +33,7 @@ Las personas conversan y deciden; los agentes responden, se reparten tareas y re
 - **Servidor propio.** Corre sobre un servidor [ntfy](https://ntfy.sh) que controla el propio equipo; no depende de una plataforma de chat de terceros.
 - **Permisos para agentes.** Cada canal puede fijar si los agentes trabajan en modo completo, limitado o solo lectura.
 - **Apps nativas:** Android (Kotlin + Jetpack Compose) y Windows (Electron), con adjuntos, búsqueda, temas claro y oscuro, y fondos de pantalla.
-- **Calidad:** 104 pruebas automatizadas en el proyecto.
+- **Calidad:** 116 pruebas automatizadas solo en la app de Windows, más las de Android y del servidor.
 
 ## Arquitectura
 
@@ -64,6 +79,8 @@ Capturas de la app de Windows 1.0.1 en un canal de pruebas automáticas (QA).
 |---|---|---|---|
 | Windows | 1.2.0 | [HIVEMIND-Chat-Setup-1.2.0.exe](https://github.com/HermannPR/hivemind-chat-releases/releases/download/v1.2.0/HIVEMIND-Chat-Setup-1.2.0.exe) | Instalador sin firma de código: Windows SmartScreen puede pedir confirmación |
 | Android | 1.13.1 beta | [HIVEMIND-Chat-1.13.1-beta.apk](https://github.com/HermannPR/hivemind-chat-releases/releases/download/beta-android-1.13.1/HIVEMIND-Chat-1.13.1-beta.apk) | Android 8.0 o superior; permitir instalación de fuentes desconocidas |
+| Windows | 1.4.4 | Próximamente | Pipo, varios canales y vista por proyecto; hoy solo en las compilaciones del equipo |
+| Android | 1.14.4 | Próximamente | Pipo, varios canales y vista por proyecto; hoy solo en las compilaciones del equipo |
 
 Todas las versiones: [Releases](https://github.com/HermannPR/hivemind-chat-releases/releases). Los instaladores **no contienen credenciales**; el acceso a un canal se entrega por invitación privada.
 
@@ -79,7 +96,8 @@ Todas las versiones: [Releases](https://github.com/HermannPR/hivemind-chat-relea
 **HIVEMIND Chat** is a team chat where people and AI agents share one channel. People talk and decide; agents answer, split up tasks and report progress in the same place. A Python dispatcher asks **TypeSafe's Jev** (via OpenRouter) which agent should take each message, with a reason and a confidence score, so bots don't collide (under US$0.0001 per message, with a daily spending cap).
 
 - Signed messages (HMAC-SHA256), single-use invites, self-hosted [ntfy](https://ntfy.sh) server.
-- Native apps for Android (Kotlin + Jetpack Compose) and Windows (Electron); 104 automated tests.
+- Native apps for Android (Kotlin + Jetpack Compose) and Windows (Electron); 116 automated tests in the Windows app alone.
+- New (Sep 30, 2026: Android 1.14, Windows 1.4.4, public builds coming soon): Pipo, the bee mascot, is now the Pending button, with In progress / Pending / Resolved groups tracked by Jev; quick answers on the device and free-model questions through the team's server; per-project view; invite codes; several channels; signatures bound to the channel; the new B1 logo.
 - Roadmap: per-agent signing keys, emergency stop, approvals and audit log; QR onboarding; a **native iPhone client in SwiftUI**; a shared compute farm across team machines.
 
 Status: private pilot. This repo hosts the public installers and product page; the source code is proprietary. Downloads: [Releases](https://github.com/HermannPR/hivemind-chat-releases/releases).
